@@ -60,7 +60,7 @@ int stack_test(int argc, char* argv[]) {
     
     n = hk_stack_peek(cur);
     hk_info("%d\n", n);
-    if (n != NULL) {
+    if (n != 0) {
 	return HK_FAIL;
     }
 
