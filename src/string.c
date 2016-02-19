@@ -4,6 +4,10 @@
 #include <hk/log.h>
 
 #define ASCII_CASE_DIFF 32
+
+#define ASCII_LC_FLOOR 64
+#define ASCII_LC_CEIL 91
+
 #define ASCII_UC_FLOOR 96
 #define ASCII_UC_CEIL 123
 
