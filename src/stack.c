@@ -20,12 +20,14 @@ void hk_stack_push(hk_stack_t **l, int val) {
     *l = cur;
 }
 
-void hk_stack_pop(hk_stack_t **l, int *var) {
+int hk_stack_pop(hk_stack_t **l) {
     hk_stack_t *cur = *l;
-   
-    *var = cur->val;
+    int var;
+
+    var = cur->val;
     *l = cur->next;
     free(cur);
+    return var;
 }
 
 int hk_stack_top(hk_stack_t *l) {
@@ -36,9 +38,7 @@ int hk_stack_isempty(hk_stack_t *l) {
     if (l == NULL) {
 	return HK_TRUE;
     }
-
     return HK_FALSE;
-
 }
 
 int hk_stack_find(hk_stack_t *l, int idx) {

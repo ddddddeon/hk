@@ -42,7 +42,7 @@ int stack_test(int argc, char* argv[]) {
     }
 
     /* hk_stack_pop */
-    hk_stack_pop(&cur, &n);
+    n = hk_stack_pop(&cur);
     hk_info("popped %d off the list and assigned to n\n", n);
     if (n != 666) {
 	result = HK_FAIL;
