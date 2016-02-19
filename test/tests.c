@@ -1,5 +1,6 @@
 #include "test.h"
 
+#include <stdio.h>
 #include <hk/log.h>
 
 int main(int argc, char* argv[]) {
