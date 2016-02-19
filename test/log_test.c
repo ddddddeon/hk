@@ -5,11 +5,11 @@
 
 int log_test(int argc, char* argv[]) {
   printf("[*] log tests:\n");
-  hkinfo("everything is fine%s\n", "!");
-  hkdebug("just debugging%s\n", "...");
-  hkwarn("i'm warning you%s\n", "...!");
-  hkerr("error%s\n", "!");
-  hkfatal("fatal%s\n", "!!");
+  hk_info("everything is fine%s\n", "!");
+  hk_debug("just debugging%s\n", "...");
+  hk_warn("i'm warning you%s\n", "...!");
+  hk_err("error%s\n", "!");
+  hk_fatal("fatal%s\n", "!!");
 
   hklog_prefix(HK_INFO);
   printf("prefix test\n");
