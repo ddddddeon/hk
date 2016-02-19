@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[]) {
     int result = HK_PASS;
-
+    
     if (log_test() != HK_PASS) {
 	hk_err("log tests failing...!\n");
 	result = HK_FAIL;
@@ -23,6 +23,7 @@ int main(int argc, char* argv[]) {
 	hk_err("stack tests failing...!\n");
     } else {
 	hk_info("stack tests passing!\n\n");
+	
     }
     
     return result;
