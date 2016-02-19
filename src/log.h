@@ -34,6 +34,7 @@
 #define hk_err(...) hklog(HK_ERR, __VA_ARGS__)
 #define hk_fatal(...) hklog(HK_FATAL, __VA_ARGS__); 
 
+void hk_init(char* name);
 void hk_log(const char *caller, int level, char *format, ...);
 void hk_log_prefix(const char *caller, int level);
 

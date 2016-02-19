@@ -3,6 +3,12 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
+#include <unistd.h>
+
+void hk_init(char* name) {
+    int pid = getpid();
+    hk_info("%s booted with PID %d\n", name, pid);
+}
 
 void hk_log(const char *caller, int level, char *format, ...) {
     va_list args;

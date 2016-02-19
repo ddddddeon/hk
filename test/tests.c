@@ -3,6 +3,9 @@
 #include <hk/log.h>
 
 int main(int argc, char* argv[]) {
+    hk_init("hk tests");
+    printf("\n");
+
     int result = HK_PASS;
     
     if (log_test() != HK_PASS) {
