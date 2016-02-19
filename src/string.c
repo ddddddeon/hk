@@ -21,18 +21,17 @@ size_t hk_strlen(char *str) {
 
 hk_string_t hk_uppercase(hk_string_t s) {
     int i;
-    int len = (int) s.len;
-    char copy[len];
+    char copy[s.len];
     
-    for (i=0; i<len; i++) {
-	if (ASCII_UC_CEIL > s.val[i] && s.val[i] > ASCII_UC_FLOOR) {
-	    copy[i] = s.val[i] - ASCII_CASE_DIFF;
-	} else {
-	    copy[i] = s.val[i];
-	}
+    for (i=0; i<s.len; i++) {
+        if (ASCII_UC_CEIL > s.val[i] && s.val[i] > ASCII_UC_FLOOR) {
+            copy[i] = s.val[i] - ASCII_CASE_DIFF;
+        } else {
+            copy[i] = s.val[i];
+        }
     }
     copy[i] = '\0';
- 
+    
     hk_string_t upper = hk_string(copy);
 
     return upper;
