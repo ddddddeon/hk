@@ -7,12 +7,6 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
-if [ $1 = "install" ]; then
-    # requires sudo
-    cp ./hkgen /usr/bin/hkgen
-    exit 1
-fi
-
 mkdir -p "$NAME"/{"src","test"}
 
 cat <<EOF > "$NAME"/Makefile

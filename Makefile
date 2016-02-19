@@ -29,7 +29,9 @@ install:
 	cp bin/lib$(NAME).so /usr/lib/lib$(NAME).so; \
 	echo "[OK] shared libraries installed to /usr/lib/"; \
 	cp $(HEADERS) /usr/include/hk/; \
-	echo "[OK] headers installed to /usr/include/hk/";
+	echo "[OK] headers installed to /usr/include/hk/"; \
+	cp scripts/hkgen /usr/bin/hkgen; \
+	echo "[OK] hkgen installed to /usr/bin/hkgen";
 
 uninstall:
 	@set -e; \
