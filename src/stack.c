@@ -4,6 +4,7 @@
 
 hk_stack_t *hk_stack_create() {
     hk_stack_t *head = NULL;
+
     return head;
 }
 
@@ -27,6 +28,7 @@ int hk_stack_pop(hk_stack_t **l) {
     var = cur->val;
     *l = cur->next;
     free(cur);
+
     return var;
 }
 
@@ -38,6 +40,7 @@ int hk_stack_isempty(hk_stack_t *l) {
     if (l == NULL) {
 	return HK_TRUE;
     }
+
     return HK_FALSE;
 }
 
@@ -47,6 +50,7 @@ int hk_stack_find(hk_stack_t *l, int idx) {
     for (i=0; i<idx; i++) {
         l = l->next;
     } 
+
     return l->val;
 }
 
