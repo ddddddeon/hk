@@ -8,8 +8,11 @@ typedef struct {
     size_t len;
 } hk_string_t;
 
-#define hk_string(s) { s, hk_strlen(s) };
+#define hk_string(s) { s, hk_strlen(s) }
 
 size_t hk_strlen(char * str);
+hk_string_t hk_uppercase(hk_string_t s);
+void hk_print(hk_string_t s);
+
 
 #endif /* !HK_STRING_H */
