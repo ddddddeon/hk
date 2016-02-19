@@ -29,6 +29,12 @@ int string_test() {
     upper = hk_uppercase(s2);
     hk_info("%s\n", upper.val);
 
+    hk_string_t mixed = hk_string("Hello WorlD!");
+    mixed = hk_lowercase(mixed);
+    hk_info("%s\n", mixed.val);
+
+    upper = hk_uppercase(mixed);
+    hk_info("%s\n", upper.val);
     printf("\n");
 
     return result;

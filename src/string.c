@@ -3,14 +3,6 @@
 #include <stdio.h>
 #include <hk/log.h>
 
-#define ASCII_CASE_DIFF 32
-
-#define ASCII_LC_FLOOR 64
-#define ASCII_LC_CEIL 91
-
-#define ASCII_UC_FLOOR 96
-#define ASCII_UC_CEIL 123
-
 size_t hk_strlen(const char *str) {
     if (!str) {
         return 0;
@@ -39,6 +31,24 @@ hk_string_t hk_uppercase(const hk_string_t s) {
     hk_string_t upper = hk_string(copy);
 
     return upper;
+}
+
+hk_string_t hk_lowercase(const hk_string_t s) {
+    int i;
+    char copy[s.len];
+
+    for (i=0; i<s.len; i++) {
+        if (ASCII_LC_CEIL > s.val[i] && s.val[i] > ASCII_LC_FLOOR) {
+            copy[i] = s.val[i] + ASCII_CASE_DIFF;
+        } else {
+            copy[i] = s.val[i];
+        }
+    }
+    copy[i] = '\0';
+    
+    hk_string_t lower = hk_string(copy);
+
+    return lower;
 }
 
 void hk_print(const hk_string_t s) {
