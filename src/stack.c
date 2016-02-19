@@ -28,6 +28,19 @@ void hk_stack_pop(hk_stack_t **l, int *var) {
     free(cur);
 }
 
+int hk_stack_top(hk_stack_t *l) {
+    return l->val;
+}
+
+int hk_stack_isempty(hk_stack_t *l) {
+    if (l == NULL) {
+	return HK_TRUE;
+    }
+
+    return HK_FALSE;
+
+}
+
 int hk_stack_find(hk_stack_t *l, int idx) {
     int i;
     
@@ -36,3 +49,4 @@ int hk_stack_find(hk_stack_t *l, int idx) {
     } 
     return l->val;
 }
+

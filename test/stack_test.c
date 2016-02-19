@@ -9,8 +9,15 @@ int stack_test(int argc, char* argv[]) {
 
     printf("[*] stack tests:\n");
 
-    /* ll_create */
+    /* hk_stack_create */
     hk_stack_t *cur = hk_stack_create();
+
+    /* hk_stack_isempty */
+    int is_empty = hk_stack_isempty(cur);
+    hk_info("is stack empty: %s\n", is_empty == HK_TRUE ? "true" : "false");
+    if (is_empty != HK_TRUE) {
+	result = HK_FAIL;
+    }
     
     /* hk_stack_push */
     hk_stack_push(&cur, 420);
@@ -27,14 +34,26 @@ int stack_test(int argc, char* argv[]) {
     }
     printf("\n");
 
+    /* hk_stack_top */
+    int n = hk_stack_top(cur);
+    hk_info("top of stack is: %d\n", n);
+    if (n != 666) {
+	result = HK_FAIL;
+    }
+
     /* hk_stack_pop */
-    int n;
     hk_stack_pop(&cur, &n);
     hk_info("popped %d off the list and assigned to n\n", n);
     if (n != 666) {
 	result = HK_FAIL;
     }
     printf("\n");
+
+    is_empty = hk_stack_isempty(cur);
+    hk_info("is stack empty: %s\n", is_empty == HK_TRUE ? "true" : "false");
+    if (is_empty != HK_FALSE) {
+	result = HK_FAIL;
+    }
 
     hk_info("remaining items in list:\n");
     while(cur) {
