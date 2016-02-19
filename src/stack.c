@@ -32,7 +32,7 @@ int hk_stack_pop(hk_stack_t **l) {
     return var;
 }
 
-int hk_stack_top(hk_stack_t *l) {
+int hk_stack_peek(hk_stack_t *l) {
     return l->val;
 }
 
@@ -43,14 +43,3 @@ int hk_stack_isempty(hk_stack_t *l) {
 
     return HK_FALSE;
 }
-
-int hk_stack_find(hk_stack_t *l, int idx) {
-    int i;
-    
-    for (i=0; i<idx; i++) {
-        l = l->next;
-    } 
-
-    return l->val;
-}
-
