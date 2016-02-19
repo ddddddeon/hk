@@ -8,6 +8,12 @@ hk_stack_t *hk_stack_create() {
     return head;
 }
 
+void hk_stack_destroy(hk_stack_t **l) {
+    if (*l != NULL) {
+	free(*l);
+    }
+}
+
 void hk_stack_push(hk_stack_t **l, int val) {
     hk_stack_t *cur;
     hk_stack_t *head;
@@ -43,3 +49,4 @@ int hk_stack_isempty(hk_stack_t *l) {
 
     return HK_FALSE;
 }
+

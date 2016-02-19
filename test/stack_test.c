@@ -54,5 +54,15 @@ int stack_test(int argc, char* argv[]) {
     }
     printf("\n");
 
+    /* hk_stack_destroy */
+    hk_stack_push(&cur, 23);
+    hk_stack_destroy(&cur);
+    
+    n = hk_stack_peek(cur);
+    hk_info("%d\n", n);
+    if (n != NULL) {
+	return HK_FAIL;
+    }
+
     return result;
 }
