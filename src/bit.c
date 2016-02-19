@@ -17,7 +17,7 @@ char* hk_int2bin(unsigned int i) {
     str[bits] = 0;
     
     unsigned u = *(unsigned *)&i;
-    for(; bits--; u >>= 1)
+    for(/* void */; bits--; u >>= 1)
 	str[bits] = u & 1 ? '1' : '0';
     
     return str;
