@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <hk/log.h>
 
+#define ASCII_CASE_DIFF 32
 #define ASCII_UC_FLOOR 96
 #define ASCII_UC_CEIL 123
-#define ASCII_CASE_DIFF 32
 
-size_t hk_strlen(char *str) {
+size_t hk_strlen(const char *str) {
     if (!str) {
         return 0;
     }
@@ -19,7 +19,7 @@ size_t hk_strlen(char *str) {
     return (size_t) i;
 }
 
-hk_string_t hk_uppercase(hk_string_t s) {
+hk_string_t hk_uppercase(const hk_string_t s) {
     int i;
     char copy[s.len];
     
@@ -37,6 +37,6 @@ hk_string_t hk_uppercase(hk_string_t s) {
     return upper;
 }
 
-void hk_print(hk_string_t s) {
+void hk_print(const hk_string_t s) {
     printf("%s\n", s.val);
 }
