@@ -20,8 +20,8 @@ hk_string_t hk_uppercase(const hk_string_t s) {
     char copy[s.len];
     
     for (i=0; i<s.len; i++) {
-        if (ASCII_UC_CEIL > s.val[i] && s.val[i] > ASCII_UC_FLOOR) {
-            copy[i] = s.val[i] - ASCII_CASE_DIFF;
+        if (UC_CEIL > s.val[i] && s.val[i] > UC_FLOOR) {
+            copy[i] = s.val[i] - CASE_DIFF;
         } else {
             copy[i] = s.val[i];
         }
@@ -38,8 +38,8 @@ hk_string_t hk_lowercase(const hk_string_t s) {
     char copy[s.len];
 
     for (i=0; i<s.len; i++) {
-        if (ASCII_LC_CEIL > s.val[i] && s.val[i] > ASCII_LC_FLOOR) {
-            copy[i] = s.val[i] + ASCII_CASE_DIFF;
+        if (LC_CEIL > s.val[i] && s.val[i] > LC_FLOOR) {
+            copy[i] = s.val[i] + CASE_DIFF;
         } else {
             copy[i] = s.val[i];
         }
