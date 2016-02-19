@@ -12,7 +12,7 @@ struct hk_stack {
 
 typedef struct hk_stack hk_stack_t;
 
-hk_stack_t *hk_stack_create(int length);
+hk_stack_t *hk_stack_create();
 void hk_stack_push(hk_stack_t **l, int val);
 void hk_stack_pop(hk_stack_t **l, int *var);
 int hk_stack_find(hk_stack_t *l, int idx);

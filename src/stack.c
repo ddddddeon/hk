@@ -2,19 +2,9 @@
 
 #include <malloc.h>
 
-hk_stack_t *hk_stack_create(int length) {
-    hk_stack_t *cur;
-    hk_stack_t *head;
-    int i;
-
-    head = NULL;
-
-    for (i=0; i<length; i++) {
-        hk_stack_push(&head, HK_STACK_INITIALIZE);
-    }
-
-    cur = head;
-    return cur;
+hk_stack_t *hk_stack_create() {
+    hk_stack_t *head = NULL;
+    return head;
 }
 
 void hk_stack_push(hk_stack_t **l, int val) {

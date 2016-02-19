@@ -10,7 +10,7 @@ int stack_test(int argc, char* argv[]) {
     printf("[*] stack tests:\n");
 
     /* ll_create */
-    hk_stack_t *cur = hk_stack_create(0);    
+    hk_stack_t *cur = hk_stack_create();
     
     /* hk_stack_push */
     hk_stack_push(&cur, 420);
