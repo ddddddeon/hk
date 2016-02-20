@@ -18,6 +18,7 @@ typedef struct {
 
 #define $(s) hk_string(s)
 
+int is_ascii(char c);
 hk_string_t hk_string(const char *str);
 size_t hk_strlen(const char *str);
 hk_string_t hk_uppercase(const hk_string_t s);
