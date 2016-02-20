@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <hk/log.h>
+#include <string.h>
 
 int hk_is_ascii(char c) {
     return c > ASCII_FLOOR && 
@@ -42,7 +43,7 @@ hk_string_t hk_uppercase(const hk_string_t s) {
     }
     copy[i] = '\0';
     
-    hk_string_t upper = hk_string(copy);
+    hk_string_t upper = hk_string(strdup(copy));
 
     return upper;
 }
@@ -60,7 +61,7 @@ hk_string_t hk_lowercase(const hk_string_t s) {
     }
     copy[i] = '\0';
     
-    hk_string_t lower = hk_string(copy);
+    hk_string_t lower = hk_string(strdup(copy));
 
     return lower;
 }
@@ -77,7 +78,7 @@ hk_string_t hk_reverse(const hk_string_t s) {
     }
     copy[s.len] = '\0';
     
-    hk_string_t reversed = hk_string(copy);
+    hk_string_t reversed = hk_string(strdup(copy));
 
     return reversed;
 }
@@ -91,7 +92,7 @@ hk_string_t hk_strcpy(const hk_string_t s) {
     }
     copy[i] = '\0';
 
-    hk_string_t copied = hk_string(copy);
+    hk_string_t copied = hk_string(strdup(copy));
     
     return copied;
 }
