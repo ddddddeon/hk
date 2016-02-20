@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <hk/log.h>
 #include <string.h>
+#include <malloc.h>
 
 int hk_is_ascii(char c) {
     return c > ASCII_FLOOR && 
@@ -22,6 +23,13 @@ size_t hk_strlen(const char *str) {
     return (size_t) i;
 }
 
+char *hk_strdup(const char *str) {
+    size_t len = hk_strlen(str) + 1;
+    char *new = malloc(len);
+
+    return memcpy(new, str, len);
+}
+
 hk_string_t hk_string(const char *str) {
     hk_string_t s;
     s.val = (char*) str; 
@@ -39,7 +47,7 @@ hk_string_t hk_strcpy(const hk_string_t s) {
     }
     copy[i] = '\0';
 
-    hk_string_t copied = hk_string(strdup(copy));
+    hk_string_t copied = hk_string(hk_strdup(copy));
     
     return copied;
 }
@@ -57,7 +65,7 @@ hk_string_t hk_uppercase(const hk_string_t s) {
     }
     copy[i] = '\0';
     
-    hk_string_t upper = hk_string(strdup(copy));
+    hk_string_t upper = hk_string(hk_strdup(copy));
 
     return upper;
 }
@@ -75,7 +83,7 @@ hk_string_t hk_lowercase(const hk_string_t s) {
     }
     copy[i] = '\0';
     
-    hk_string_t lower = hk_string(strdup(copy));
+    hk_string_t lower = hk_string(hk_strdup(copy));
 
     return lower;
 }
@@ -85,14 +93,14 @@ hk_string_t hk_reverse(const hk_string_t s) {
     char copy[s.len];
 
     for (i=0, j=s.len-1;
-         j > i;
+         j >= i;
          i++, j--) {
         copy[i] = s.val[j];
         copy[j] = s.val[i];
     }
     copy[s.len] = '\0';
     
-    hk_string_t reversed = hk_string(strdup(copy));
+    hk_string_t reversed = hk_string(hk_strdup(copy));
 
     return reversed;
 }
