@@ -5,11 +5,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-/*
- * from http://stackoverflow.com/questions/1024389/ \
- * print-an-int-in-binary-representation-using-c
- */
-char* hk_int2bin(unsigned int i) {
+char* hk_bitstring(unsigned int i) {
     size_t bits = sizeof(int) * CHAR_BIT;
     char* str = malloc(bits + 1);
     if (!str) {
@@ -18,17 +14,16 @@ char* hk_int2bin(unsigned int i) {
 
     str[bits] = HK_ZERO;
     
-    unsigned u = *(unsigned *)&i;
-    for (/* void */; bits--; u >>= 1) {
-        str[bits] = u & 1 ? '1' : '0';
+    for (/* void */; bits--; i >>= 1) {
+        str[bits] = i & 1 ? '1' : '0';
     }
 
     return str;
 }
 
-void hk_print_bits(int level, unsigned set) {
+void hk_print_bits(int level, unsigned int set) {
     hklog_prefix(level);
-    char* bits = hk_int2bin(set);
+    char* bits = hk_bitstring(set);
     printf("%s <--- %u\n", bits, set);
     free(bits);
 }
