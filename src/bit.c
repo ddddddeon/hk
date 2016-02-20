@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-char* hk_bitstring(unsigned int i) {
+char* hk_bitstring(unsigned int set) {
     size_t bits = sizeof(int) * CHAR_BIT;
     char* str = malloc(bits + 1);
     if (!str) {
@@ -14,8 +14,8 @@ char* hk_bitstring(unsigned int i) {
 
     str[bits] = HK_ZERO;
     
-    for (/* void */; bits--; i >>= 1) {
-        str[bits] = i & 1 ? '1' : '0';
+    for (/* void */; bits--; set >>= 1) {
+        str[bits] = set & 1 ? '1' : '0';
     }
 
     return str;
