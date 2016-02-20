@@ -4,7 +4,8 @@
 #include <hk/log.h>
 
 int hk_is_ascii(char c) {
-    return c > 31 && c < 127;
+    return c > 31 && 
+	   c < 127;
 }
 
 size_t hk_strlen(const char *str) {
@@ -38,7 +39,7 @@ hk_string_t hk_uppercase(const hk_string_t s) {
             copy[i] = s.val[i];
         }
     }
-    //    copy[i] = '\0';
+    copy[i] = '\0';
     
     hk_string_t upper = hk_string(copy);
 
