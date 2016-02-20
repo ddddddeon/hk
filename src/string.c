@@ -32,7 +32,7 @@ char *hk_strdup(const char *str) {
 
 hk_string_t hk_string(const char *str) {
     hk_string_t s;
-    s.val = (char*) str; 
+    s.val = hk_strdup(str); 
     s.len = hk_strlen(str);
 
     return s;
@@ -47,7 +47,7 @@ hk_string_t hk_strcpy(const hk_string_t s) {
     }
     copy[i] = '\0';
 
-    hk_string_t copied = hk_string(hk_strdup(copy));
+    hk_string_t copied = hk_string(copy);
     
     return copied;
 }
@@ -65,7 +65,7 @@ hk_string_t hk_uppercase(const hk_string_t s) {
     }
     copy[i] = '\0';
     
-    hk_string_t upper = hk_string(hk_strdup(copy));
+    hk_string_t upper = hk_string(copy);
 
     return upper;
 }
@@ -83,7 +83,7 @@ hk_string_t hk_lowercase(const hk_string_t s) {
     }
     copy[i] = '\0';
     
-    hk_string_t lower = hk_string(hk_strdup(copy));
+    hk_string_t lower = hk_string(copy);
 
     return lower;
 }
@@ -100,7 +100,7 @@ hk_string_t hk_reverse(const hk_string_t s) {
     }
     copy[s.len] = '\0';
     
-    hk_string_t reversed = hk_string(hk_strdup(copy));
+    hk_string_t reversed = hk_string(copy);
 
     return reversed;
 }

@@ -4,6 +4,7 @@
 #include "core.h"
 
 #define HK_STACK_INITIALIZE 0
+#define HK_STACK_EMPTY -1
 
 struct hk_stack {
     int val;

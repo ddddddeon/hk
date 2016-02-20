@@ -28,7 +28,9 @@ char* hk_int2bin(unsigned int i) {
 
 void hk_print_bits(int level, unsigned set) {
     hklog_prefix(level);
-    printf("%s <--- %u\n", hk_int2bin(set), set);
+    char* bits = hk_int2bin(set);
+    printf("%s <--- %u\n", bits, set);
+    free(bits);
 }
 
 int hk_bit_is_set(unsigned set, unsigned int bit_num) {

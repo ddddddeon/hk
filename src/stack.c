@@ -9,8 +9,8 @@ hk_stack_t *hk_stack_create() {
 }
 
 void hk_stack_destroy(hk_stack_t **l) {
-    if (*l != NULL) {
-        free(*l);
+    while(*l != NULL) {
+        (void) hk_stack_pop(l);
     }
 }
 
@@ -28,6 +28,10 @@ void hk_stack_push(hk_stack_t **l, int val) {
 }
 
 int hk_stack_pop(hk_stack_t **l) {
+    if (*l == NULL) {
+        return HK_STACK_EMPTY;
+    }
+
     hk_stack_t *cur = *l;
     int var;
 
@@ -39,6 +43,10 @@ int hk_stack_pop(hk_stack_t **l) {
 }
 
 int hk_stack_peek(hk_stack_t *l) {
+    if (l == NULL) {
+        return HK_STACK_EMPTY;
+    }
+
     return l->val;
 }
 

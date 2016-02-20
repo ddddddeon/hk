@@ -49,8 +49,7 @@ int stack_test(int argc, char* argv[]) {
 
     hk_info("remaining items in list:\n");
     while(cur) {
-        hk_info("%d\n", cur->val);
-        cur = cur->next;
+	hk_stack_pop(&cur);
     }
     printf("\n");
 
@@ -60,7 +59,7 @@ int stack_test(int argc, char* argv[]) {
     
     n = hk_stack_peek(cur);
     hk_info("%d\n", n);
-    if (n != 0) {
+    if (n != HK_STACK_EMPTY) {
         return HK_FAIL;
     }
 
