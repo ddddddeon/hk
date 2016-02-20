@@ -15,6 +15,14 @@ size_t hk_strlen(const char *str) {
     return (size_t) i;
 }
 
+hk_string_t hk_string(const char *str) {
+    hk_string_t s;
+    s.val = (char*) str; 
+    s.len = hk_strlen(str);
+
+    return s;
+}
+
 hk_string_t hk_uppercase(const hk_string_t s) {
     int i;
     char copy[s.len];

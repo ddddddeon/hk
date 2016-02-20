@@ -16,10 +16,10 @@ typedef struct {
     size_t len;
 } hk_string_t;
 
-#define hk_string(s) { s, hk_strlen(s) }
 #define $(s) hk_string(s)
 
-size_t hk_strlen(const char * str);
+hk_string_t hk_string(const char *str);
+size_t hk_strlen(const char *str);
 hk_string_t hk_uppercase(const hk_string_t s);
 hk_string_t hk_lowercase(const hk_string_t s);
 void hk_print(const hk_string_t s);
