@@ -71,10 +71,10 @@ hk_string_t hk_reverse(const hk_string_t s) {
     char copy[s.len];
 
     for (i=0, j=s.len-1;
-	 j > i;
-	 i++, j--) {
-	copy[i] = s.val[j];
-	copy[j] = s.val[i];
+         j > i;
+         i++, j--) {
+        copy[i] = s.val[j];
+        copy[j] = s.val[i];
     }
     copy[s.len] = '\0';
     
@@ -88,7 +88,7 @@ hk_string_t hk_strcpy(const hk_string_t s) {
     char copy[s.len];
 
     for (i=0; i<s.len; i++) {
-	copy[i] = s.val[i];
+        copy[i] = s.val[i];
     }
     copy[i] = '\0';
 
