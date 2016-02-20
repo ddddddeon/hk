@@ -43,14 +43,15 @@ int stack_test(int argc, char* argv[]) {
     
     is_empty = hk_stack_isempty(cur);
     hk_info("is stack empty: %s\n", is_empty == HK_TRUE ? "true" : "false");
-    if (is_empty != HK_FALSE) {
+    if (is_empty == HK_TRUE) {
         result = HK_FAIL;
     }
 
-    hk_info("remaining items in list:\n");
-    while(cur) {
-	hk_stack_pop(&cur);
+    hk_info("remaining items in the stack:\n");
+    while (cur) {
+	hk_info("%d\n", hk_stack_pop(&cur));
     }
+
     printf("\n");
 
     /* hk_stack_destroy */
