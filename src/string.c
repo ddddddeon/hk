@@ -5,7 +5,7 @@
 
 int hk_is_ascii(char c) {
     return c > 31 && 
-	   c < 127;
+           c < 127;
 }
 
 size_t hk_strlen(const char *str) {
