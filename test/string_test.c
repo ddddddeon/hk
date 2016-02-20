@@ -60,12 +60,12 @@ int string_test() {
     hk_string_t s4 = hk_string("kalli rulz");
     hk_string_t s5 = hk_strcpy(s4);
     hk_info("%s\n", s5.val);
-    free(s5.val);
     free(s4.val);
 
     /* hk_strdup */
     char* s6 = hk_strdup(s5.val);
     hk_info("%s\n", s6);
+    free(s5.val);
     free(s6);
     
     return result;
