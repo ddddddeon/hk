@@ -64,5 +64,7 @@ int stack_test(int argc, char* argv[]) {
         return HK_FAIL;
     }
 
+    printf("\n");
+
     return result;
 }

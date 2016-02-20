@@ -69,6 +69,8 @@ int string_test() {
     hk_info("%s\n", s6);
     free(s5.val);
     free(s6);
-    
+
+    printf("\n");
+
     return result;
 }
