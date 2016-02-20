@@ -41,7 +41,7 @@ int hk_stack_pop(hk_stack_t **l) {
 
 int hk_stack_peek(hk_stack_t *l) {
     if (l == NULL) {
-	return -1;
+	return HK_STACK_EMPTY;
     }
 
     return l->val;
