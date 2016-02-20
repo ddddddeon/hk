@@ -8,11 +8,13 @@
 int string_test() {
     unsigned int result = HK_PASS;
 
+    printf("[*] string tests:\n");
 
     /* hk_string */
     char* str = "hello world";
     hk_string_t s = hk_string("hello world");
 
+    hklog_prefix(HK_INFO);
     hk_print(s);
 
     hk_info("%s length: %d\n", s.val, s.len);
