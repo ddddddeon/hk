@@ -28,14 +28,14 @@ void hk_print_bits(int level, unsigned int set) {
     free(bits);
 }
 
-int hk_bit_is_set(unsigned set, unsigned int bit_num) {
+int hk_bit_is_set(unsigned int set, unsigned int bit_num) {
     return set & bit_num;
 }
 
-void hk_set_bit(unsigned *set, unsigned int bit_num) {
+void hk_set_bit(unsigned int *set, unsigned int bit_num) {
     *set |= bit_num;
 }
 
-void hk_unset_bit(unsigned *set, unsigned int bit_num) {
+void hk_unset_bit(unsigned int *set, unsigned int bit_num) {
     *set &= ~bit_num;
 }
