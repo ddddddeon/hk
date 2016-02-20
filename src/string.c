@@ -17,6 +17,7 @@ size_t hk_strlen(const char *str) {
     while (str[i] != '\0' && hk_is_ascii(str[i])) {
         i++;
     }
+
     return (size_t) i;
 }
 
