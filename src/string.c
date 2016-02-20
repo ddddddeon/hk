@@ -4,8 +4,8 @@
 #include <hk/log.h>
 
 int hk_is_ascii(char c) {
-    return c > 31 && 
-           c < 127;
+    return c > ASCII_FLOOR && 
+           c < ASCII_CEIL;
 }
 
 size_t hk_strlen(const char *str) {
@@ -31,7 +31,7 @@ hk_string_t hk_string(const char *str) {
 
 hk_string_t hk_uppercase(const hk_string_t s) {
     int i;
-    char copy[s.len+1];
+    char copy[s.len];
     
     for (i=0; i<s.len; i++) {
         if (UC_CEIL > s.val[i] && s.val[i] > UC_FLOOR) {
@@ -49,7 +49,7 @@ hk_string_t hk_uppercase(const hk_string_t s) {
 
 hk_string_t hk_lowercase(const hk_string_t s) {
     int i;
-    char copy[s.len+1];
+    char copy[s.len];
 
     for (i=0; i<s.len; i++) {
         if (LC_CEIL > s.val[i] && s.val[i] > LC_FLOOR) {
@@ -63,6 +63,37 @@ hk_string_t hk_lowercase(const hk_string_t s) {
     hk_string_t lower = hk_string(copy);
 
     return lower;
+}
+
+hk_string_t hk_reverse(const hk_string_t s) {
+    int i, j;
+    char copy[s.len];
+
+    for (i=0, j=s.len-1;
+	 j > i;
+	 i++, j--) {
+	copy[i] = s.val[j];
+	copy[j] = s.val[i];
+    }
+    copy[s.len] = '\0';
+    
+    hk_string_t reversed = hk_string(copy);
+
+    return reversed;
+}
+
+hk_string_t hk_strcpy(const hk_string_t s) {
+    int i;
+    char copy[s.len];
+
+    for (i=0; i<s.len; i++) {
+	copy[i] = s.val[i];
+    }
+    copy[i] = '\0';
+
+    hk_string_t copied = hk_string(copy);
+    
+    return copied;
 }
 
 void hk_print(const hk_string_t s) {

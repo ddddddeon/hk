@@ -37,5 +37,13 @@ int string_test() {
     hk_info("%s\n", upper.val);
     printf("\n");
 
+    hk_string_t s3 = hk_string("hi there lol");
+    hk_string_t reversed = hk_reverse(s3);
+    hk_info("%s\n", reversed.val);
+
+    hk_string_t s4 = hk_string("kalli rulz");
+    hk_string_t s5 = hk_strcpy(s4);
+    hk_info("%s\n", s5.val);
+
     return result;
 }

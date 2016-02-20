@@ -11,6 +11,9 @@
 #define UC_FLOOR 96
 #define UC_CEIL 123
 
+#define ASCII_FLOOR 31
+#define ASCII_CEIL 127
+
 typedef struct {
     char* val;
     size_t len;
@@ -23,6 +26,8 @@ hk_string_t hk_string(const char *str);
 size_t hk_strlen(const char *str);
 hk_string_t hk_uppercase(const hk_string_t s);
 hk_string_t hk_lowercase(const hk_string_t s);
+hk_string_t hk_reverse(const hk_string_t s);
+hk_string_t hk_strcpy(const hk_string_t s);
 void hk_print(const hk_string_t s);
 
 
