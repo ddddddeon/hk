@@ -12,14 +12,12 @@ int ll_test(int argc, char* argv[]) {
     /* ll_create */
     ll_t *cur = ll_create(0);    
 		hkinfo("length of cur: %d\n", ll_length(cur));
-		printf("\n");
 
     /* ll_push */
     ll_push(&cur, 420);
     ll_push(&cur, 69);
     ll_push(&cur, 666);
     hkinfo("pushed 3 values: 420, 69, 666\n");
-    printf("\n");
 
     /* ll_find */
     int num = ll_find(cur, 2);
@@ -27,7 +25,6 @@ int ll_test(int argc, char* argv[]) {
     if (num != 420) {
 				result = HK_FAIL;
     }
-    printf("\n");
 
 		/* ll_length */
 		int length = ll_length(cur);
@@ -35,7 +32,6 @@ int ll_test(int argc, char* argv[]) {
 				result = HK_FAIL;
 		}
 		hkinfo("length of cur: %d\n", length);
-		printf("\n");
 
     /* ll_pop */
     int n;
