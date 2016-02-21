@@ -46,3 +46,18 @@ int ll_find(ll_t *l, int idx) {
     } 
     return l->val;
 }
+
+int ll_length(ll_t *l) {
+		int i;
+		
+		if (l == NULL) {
+				return 0;
+		}
+
+		for (i=1; /* void */; i++) {
+				if (l->next == NULL) {
+						return i;
+				}
+				l = l->next;
+		}
+}
