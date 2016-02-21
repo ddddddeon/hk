@@ -23,7 +23,7 @@ int ll_test(int argc, char* argv[]) {
     int num = ll_find(cur, 2);
     hkinfo("value at index 2: %d\n", num);
     if (num != 420) {
-	result = HK_FAIL;
+				result = HK_FAIL;
     }
     printf("\n");
 
@@ -32,14 +32,14 @@ int ll_test(int argc, char* argv[]) {
     ll_pop(&cur, &n);
     hkinfo("popped %d off the list and assigned to n\n", n);
     if (n != 666) {
-	result = HK_FAIL;
+				result = HK_FAIL;
     }
     printf("\n");
 
     hkinfo("remaining items in list:\n");
     while(cur) {
-	hkinfo("%d\n", cur->val);
-	cur = cur->next;
+				hkinfo("%d\n", cur->val);
+				cur = cur->next;
     }
     printf("\n");
 
