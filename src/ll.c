@@ -14,6 +14,7 @@ ll_t *ll_create(int length) {
     }
 
     cur = head;
+
     return cur;
 }
 
@@ -35,6 +36,7 @@ void ll_pop(ll_t **l, int *var) {
    
     *var = cur->val;
     *l = cur->next;
+
     free(cur);
 }
 
@@ -44,6 +46,7 @@ int ll_find(ll_t *l, int idx) {
     for (i=0; i<idx; i++) {
         l = l->next;
     } 
+
     return l->val;
 }
 
