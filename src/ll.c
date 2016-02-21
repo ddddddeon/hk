@@ -54,10 +54,11 @@ int ll_length(ll_t *l) {
 				return 0;
 		}
 
-		for (i=1; /* void */; i++) {
+		for (i=1; /* void */ ; i++) {
 				if (l->next == NULL) {
 						return i;
 				}
+
 				l = l->next;
 		}
 }
