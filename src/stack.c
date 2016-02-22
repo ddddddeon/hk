@@ -10,7 +10,7 @@ hk_stack_t *hk_stack_create() {
 
 void hk_stack_destroy(hk_stack_t **l) {
     if (*l != NULL) {
-	free(*l);
+        free(*l);
     }
 }
 
@@ -44,7 +44,7 @@ int hk_stack_peek(hk_stack_t *l) {
 
 int hk_stack_isempty(hk_stack_t *l) {
     if (l == NULL) {
-	return HK_TRUE;
+        return HK_TRUE;
     }
 
     return HK_FALSE;
