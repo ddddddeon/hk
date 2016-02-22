@@ -28,6 +28,12 @@ int main(int argc, char* argv[]) {
     } else {
         hk_info("stack tests passing!\n\n");
     }
+
+    if (string_test() != HK_PASS) {
+        hk_err("string tests failing...!\n");
+    } else {
+        hk_info("string tests passing!\n\n");
+    }
     
     return result;
 }
