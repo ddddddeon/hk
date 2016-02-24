@@ -85,7 +85,7 @@ hk_string_t hk_reverse(const hk_string_t s) {
     char copy[s.len];
 
     for (i=0, j=s.len-1;
-         j > i;
+         j >= i;
          i++, j--) {
         copy[i] = s.val[j];
         copy[j] = s.val[i];
