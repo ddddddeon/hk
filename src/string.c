@@ -1,7 +1,6 @@
 #include "string.h"
 
 #include <stdio.h>
-#include <hk/log.h>
 #include <string.h>
 #include <malloc.h>
 
