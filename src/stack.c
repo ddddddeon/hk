@@ -1,7 +1,7 @@
 #include "stack.h"
+#include "log.h"
 
 #include <malloc.h>
-#include <hk/log.h>
 
 hk_stack_t *hk_stack_create() {
     hk_stack_t *head = NULL;
