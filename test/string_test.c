@@ -58,7 +58,7 @@ int string_test() {
     hk_string_free(s3);
 
     /* hk_strcpy */
-    hk_string_t s4 = hk_string("kalli rulz");
+    hk_string_t s4 = hk_string("hello world");
     hk_string_t s5 = hk_strcpy(s4);
     hk_info("%s\n", s5.val);
     hk_string_free(s4);
@@ -70,20 +70,33 @@ int string_test() {
     free(s6);
 
     /* hk_string_replace */
-    hk_string_t orig = hk_string("hallie rulz");
-    hk_string_t replaced = hk_string_replace(orig, "hallie", "kalli");
+    hk_string_t orig = hk_string("hello world");
+    hk_string_t replaced = hk_string_replace(orig, "hello", "hi");
     hk_info("%s -> %s\n", orig.val, replaced.val);
     hk_string_free(orig);
 
-    hk_string_t replaced2 = hk_string_replace(replaced, "kalli", "kallisti");
+    hk_string_t replaced2 = hk_string_replace(replaced, "hi", "what's good");
     hk_info("%s -> %s\n", replaced.val, replaced2.val);
     hk_string_free(replaced);
 
-    hk_string_t replaced3 = hk_string_replace(replaced2, "kallisti rulz", "hi");
+    hk_string_t replaced3 = hk_string_replace(replaced2, "what's ", "");
     hk_info("%s -> %s\n", replaced2.val, replaced3.val);
     hk_string_free(replaced2);
+
+    hk_string_t replaced4 = hk_string_replace(replaced3, "good", "good morning");
+    hk_info("%s -> %s\n", replaced3.val, replaced4.val);
     hk_string_free(replaced3);
     
+    hk_string_t replaced5 = hk_string_replace(replaced4, "world", "yall");
+    hk_info("%s -> %s\n", replaced4.val, replaced5.val);
+    hk_string_free(replaced4);
+
+
+    hk_string_t replaced6 = hk_string_replace(replaced5, "asdf", "fdsa");
+    hk_info("%s -> %s\n", replaced4.val, replaced5.val);   
+    hk_string_free(replaced5);
+    hk_string_free(replaced6);
+
     printf("\n");
 
     return result;
