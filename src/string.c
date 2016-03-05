@@ -37,6 +37,14 @@ hk_string_t hk_string(const char *str) {
     return s;
 }
 
+void hk_string_free(hk_string_t s) {
+    free(s.val);
+}
+
+void hk_print(const hk_string_t s) {
+    printf("%s\n", s.val);
+}
+
 hk_string_t hk_strcpy(const hk_string_t s) {
     int i;
     char copy[s.len];
@@ -104,10 +112,34 @@ hk_string_t hk_reverse(const hk_string_t s) {
     return reversed;
 }
 
-void hk_print(const hk_string_t s) {
-    printf("%s\n", s.val);
-}
+hk_string_t hk_string_replace(const hk_string_t s, const char *search, const char *replace) {
+    int replace_len = (int) hk_strlen(replace);
+    int diff_len = replace_len - hk_strlen(search);
+    int new_len = s.len + diff_len + 1;
 
-void hk_string_free(hk_string_t s) {
-    free(s.val);
+    char *index = strstr(s.val, search);
+    if (index == NULL) {
+        return hk_string(s.val);
+    }
+
+    int idx = index - s.val;
+    char replaced_string[new_len];
+
+    int i;
+    for (i = 0; i < idx; i++) {
+        replaced_string[i] = s.val[i];
+    }
+
+    for (/* void */; i < ( idx + replace_len ); i++) {
+        replaced_string[i] = replace[i];
+    }
+
+    for (/* void */; i < new_len; i++) {
+        replaced_string[i] = s.val[i - diff_len];
+    } 
+    replaced_string[i] = '\0';
+
+    hk_string_t replaced = hk_string(replaced_string);
+
+    return replaced;
 }

@@ -10,4 +10,6 @@
 #define HK_FALSE 0
 #define HK_TRUE 1
 
+#define NULL 0x0
+
 #endif /* !HK_CORE_H */

@@ -69,6 +69,21 @@ int string_test() {
     hk_string_free(s5);
     free(s6);
 
+    /* hk_string_replace */
+    hk_string_t orig = hk_string("hallie rulz");
+    hk_string_t replaced = hk_string_replace(orig, "hallie", "kalli");
+    hk_info("%s -> %s\n", orig.val, replaced.val);
+    hk_string_free(orig);
+
+    hk_string_t replaced2 = hk_string_replace(replaced, "kalli", "kallisti");
+    hk_info("%s -> %s\n", replaced.val, replaced2.val);
+    hk_string_free(replaced);
+
+    hk_string_t replaced3 = hk_string_replace(replaced2, "kallisti rulz", "hi");
+    hk_info("%s -> %s\n", replaced2.val, replaced3.val);
+    hk_string_free(replaced2);
+    hk_string_free(replaced3);
+    
     printf("\n");
 
     return result;
