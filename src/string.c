@@ -122,15 +122,15 @@ hk_string_t hk_string_replace(const hk_string_t s, const char *search, const cha
         return hk_string(s.val);
     }
 
-    int idx = index - s.val;
     char replaced_string[new_len];
+    int  replace_start = index - s.val;
+    int  i = 0;
 
-    int i;
-    for (i = 0; i < idx; i++) {
+    for (/* void */; i < replace_start; i++) {
         replaced_string[i] = s.val[i];
     }
 
-    for (/* void */; i < ( idx + replace_len ); i++) {
+    for (/* void */; i < ( replace_start + replace_len ); i++) {
         replaced_string[i] = replace[i];
     }
 
