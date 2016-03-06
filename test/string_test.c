@@ -5,7 +5,7 @@
 #include <hk/string.h>
 #include <malloc.h>
 
-#define HK_STR_EQ(var, str) do {               \
+#define hk_str_eq(var, str) do {               \
     if (strcmp((var), (str)) != 0) {           \
         result = HK_FAIL;                      \
         hk_err("unexpected string result!\n"); \
@@ -35,7 +35,7 @@ int string_test() {
     /* hk_uppercase */
     hk_string_t upper = hk_uppercase(s);
     hk_info("%s\n", upper.val);
-    HK_STR_EQ(upper.val, "HELLO WORLD");
+    hk_str_eq(upper.val, "HELLO WORLD");
     hk_string_free(&upper);
     hk_string_free(&s);
 
@@ -44,7 +44,7 @@ int string_test() {
     hk_string_t upper2 = hk_uppercase(s2);
     hk_info("%s\n", s2.val);
     hk_info("%s\n", upper2.val);
-    HK_STR_EQ(upper2.val, "HELLO !@#$%^&*()_+{}|:>?<,./;'[] WORLD");
+    hk_str_eq(upper2.val, "HELLO !@#$%^&*()_+{}|:>?<,./;'[] WORLD");
     hk_string_free(&upper2);
     hk_string_free(&s2);
 
@@ -53,7 +53,7 @@ int string_test() {
     hk_string_t m_lower = hk_lowercase(mixed);
     hk_info("%s\n", mixed.val);
     hk_info("%s\n", m_lower.val);
-    HK_STR_EQ(m_lower.val, "hello world!");
+    hk_str_eq(m_lower.val, "hello world!");
     hk_string_free(&m_lower);
     hk_string_free(&mixed);
 
@@ -61,7 +61,7 @@ int string_test() {
     hk_string_t s3 = hk_string("hi there lol");
     hk_string_t reversed = hk_reverse(s3);
     hk_info("%s\n", reversed.val);
-    HK_STR_EQ(reversed.val, "lol ereht ih");
+    hk_str_eq(reversed.val, "lol ereht ih");
     hk_string_free(&reversed);
     hk_string_free(&s3);
 
@@ -69,13 +69,13 @@ int string_test() {
     hk_string_t s4 = hk_string("hello world");
     hk_string_t s5 = hk_strcpy(s4);
     hk_info("%s\n", s5.val);
-    HK_STR_EQ(s5.val, "hello world");
+    hk_str_eq(s5.val, "hello world");
     hk_string_free(&s4);
 
     /* hk_strdup */
     char* s6 = hk_strdup(s5.val);
     hk_info("%s\n", s6);
-    HK_STR_EQ(s6, "hello world");
+    hk_str_eq(s6, "hello world");
     hk_string_free(&s5);
     free(s6);
 
@@ -83,32 +83,32 @@ int string_test() {
     hk_string_t orig = hk_string("hello world");
     hk_string_t replaced = hk_string_replace(orig, "hello", "hi");
     hk_info("%s -> %s\n", orig.val, replaced.val);
-    HK_STR_EQ(replaced.val, "hi world");
+    hk_str_eq(replaced.val, "hi world");
     hk_string_free(&orig);
 
     hk_string_t replaced2 = hk_string_replace(replaced, "hi", "what's good");
     hk_info("%s -> %s\n", replaced.val, replaced2.val);
-    HK_STR_EQ(replaced2.val, "what's good world");
+    hk_str_eq(replaced2.val, "what's good world");
     hk_string_free(&replaced);
 
     hk_string_t replaced3 = hk_string_replace(replaced2, "what's ", "");
     hk_info("%s -> %s\n", replaced2.val, replaced3.val);
-    HK_STR_EQ(replaced3.val, "good world");
+    hk_str_eq(replaced3.val, "good world");
     hk_string_free(&replaced2);
 
     hk_string_t replaced4 = hk_string_replace(replaced3, "good", "good morning");
     hk_info("%s -> %s\n", replaced3.val, replaced4.val);
-    HK_STR_EQ(replaced4.val, "good morning world");
+    hk_str_eq(replaced4.val, "good morning world");
     hk_string_free(&replaced3);
     
     hk_string_t replaced5 = hk_string_replace(replaced4, "world", "yall");
     hk_info("%s -> %s\n", replaced4.val, replaced5.val);
-    HK_STR_EQ(replaced5.val, "good morning yall");
+    hk_str_eq(replaced5.val, "good morning yall");
     hk_string_free(&replaced4);
 
     hk_string_t replaced6 = hk_string_replace(replaced5, "yall", "fdsa");
     hk_info("%s -> %s\n", replaced5.val, replaced6.val);   
-    HK_STR_EQ(replaced6.val, "good morning fdsa");
+    hk_str_eq(replaced6.val, "good morning fdsa");
     hk_string_free(&replaced5);
     hk_string_free(&replaced6);
 
