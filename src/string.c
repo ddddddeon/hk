@@ -119,7 +119,7 @@ hk_string_t hk_reverse(const hk_string_t s) {
     return reversed;
 }
 
-hk_string_t hk_string_replace(const hk_string_t s, const char *search, const char *replace) {
+hk_string_t hk_replace(const hk_string_t s, const char *search, const char *replace) {
     int replace_len = (int) hk_strlen(replace);
     int diff_len = replace_len - hk_strlen(search);
     int new_len = s.len + diff_len + 1;

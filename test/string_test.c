@@ -78,34 +78,34 @@ int string_test() {
     hk_string_free(&s5);
     free(s6);
 
-    /* hk_string_replace */
+    /* hk_replace */
     hk_string_t orig = hk_string("hello world");
-    hk_string_t replaced = hk_string_replace(orig, "hello", "hi");
+    hk_string_t replaced = hk_replace(orig, "hello", "hi");
     hk_info("%s -> %s\n", orig.val, replaced.val);
     hk_str_eq(replaced.val, "hi world");
     hk_string_free(&orig);
 
-    hk_string_t replaced2 = hk_string_replace(replaced, "hi", "what's good");
+    hk_string_t replaced2 = hk_replace(replaced, "hi", "what's good");
     hk_info("%s -> %s\n", replaced.val, replaced2.val);
     hk_str_eq(replaced2.val, "what's good world");
     hk_string_free(&replaced);
 
-    hk_string_t replaced3 = hk_string_replace(replaced2, "what's ", "");
+    hk_string_t replaced3 = hk_replace(replaced2, "what's ", "");
     hk_info("%s -> %s\n", replaced2.val, replaced3.val);
     hk_str_eq(replaced3.val, "good world");
     hk_string_free(&replaced2);
 
-    hk_string_t replaced4 = hk_string_replace(replaced3, "good", "good morning");
+    hk_string_t replaced4 = hk_replace(replaced3, "good", "good morning");
     hk_info("%s -> %s\n", replaced3.val, replaced4.val);
     hk_str_eq(replaced4.val, "good morning world");
     hk_string_free(&replaced3);
     
-    hk_string_t replaced5 = hk_string_replace(replaced4, "world", "yall");
+    hk_string_t replaced5 = hk_replace(replaced4, "world", "yall");
     hk_info("%s -> %s\n", replaced4.val, replaced5.val);
     hk_str_eq(replaced5.val, "good morning yall");
     hk_string_free(&replaced4);
 
-    hk_string_t replaced6 = hk_string_replace(replaced5, "yall", "fdsa");
+    hk_string_t replaced6 = hk_replace(replaced5, "yall", "fdsa");
     hk_info("%s -> %s\n", replaced5.val, replaced6.val);   
     hk_str_eq(replaced6.val, "good morning fdsa");
     hk_string_free(&replaced5);

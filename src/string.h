@@ -31,6 +31,6 @@ hk_string_t hk_strcpy(const hk_string_t s);
 hk_string_t hk_uppercase(const hk_string_t s);
 hk_string_t hk_lowercase(const hk_string_t s);
 hk_string_t hk_reverse(const hk_string_t s);
-hk_string_t hk_string_replace(const hk_string_t s, const char *search, const char *replace);
+hk_string_t hk_replace(const hk_string_t s, const char *search, const char *replace);
 
 #endif /* !HK_STRING_H */
