@@ -1,9 +1,9 @@
 #include "test.h"
 
 #include <stdio.h>
+#include <malloc.h>
 #include <hk/log.h>
 #include <hk/string.h>
-#include <malloc.h>
 
 #define hk_str_eq(var, str) do {               \
     if (strcmp((var), (str)) != 0) {           \
