@@ -25,7 +25,10 @@ char *hk_strdup(const char *str) {
     size_t len = hk_strlen(str) + 1;
     char *new = malloc(len);
 
-    return memcpy(new, str, len);
+    memcpy(new, str, len);
+    new[len-1] = '\0';
+
+    return new;
 }
 
 hk_string_t hk_string(const char *str) {
@@ -46,7 +49,7 @@ void hk_print(const hk_string_t s) {
 
 hk_string_t hk_strcpy(const hk_string_t s) {
     int i;
-    char copy[s.len];
+    char copy[s.len + 1];
 
     for (i=0; i<s.len; i++) {
         copy[i] = s.val[i];
@@ -60,7 +63,7 @@ hk_string_t hk_strcpy(const hk_string_t s) {
 
 hk_string_t hk_uppercase(const hk_string_t s) {
     int i;
-    char copy[s.len];
+    char copy[s.len + 1];
     
     for (i=0; i<s.len; i++) {
         if (UC_CEIL > s.val[i] && s.val[i] > UC_FLOOR) {
@@ -78,7 +81,7 @@ hk_string_t hk_uppercase(const hk_string_t s) {
 
 hk_string_t hk_lowercase(const hk_string_t s) {
     int i;
-    char copy[s.len];
+    char copy[s.len + 1];
 
     for (i=0; i<s.len; i++) {
         if (LC_CEIL > s.val[i] && s.val[i] > LC_FLOOR) {
@@ -96,7 +99,7 @@ hk_string_t hk_lowercase(const hk_string_t s) {
 
 hk_string_t hk_reverse(const hk_string_t s) {
     int i, j;
-    char copy[s.len];
+    char copy[s.len + 1];
 
     for (i=0, j=s.len-1;
          j >= i;
