@@ -30,8 +30,6 @@ int string_test() {
         result = HK_FAIL;
     }
 
-    printf("\n");
-
     /* hk_uppercase */
     hk_string_t upper = hk_uppercase(s);
     hk_info("%s\n", upper.val);
