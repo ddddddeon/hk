@@ -58,6 +58,7 @@ int string_test() {
     /* hk_reverse */
     hk_string_t s3 = hk_string("hi there lol");
     hk_string_t reversed = hk_reverse(s3);
+    hk_info("%s\n", s3.val);
     hk_info("%s\n", reversed.val);
     hk_str_eq(reversed.val, "lol ereht ih");
     hk_string_free(&reversed);
