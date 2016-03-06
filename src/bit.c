@@ -2,7 +2,7 @@
 #include "log.h"
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <malloc.h>
 #include <limits.h>
 
 char* hk_bitstring(unsigned int set) {
