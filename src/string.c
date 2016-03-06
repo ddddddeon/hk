@@ -24,7 +24,9 @@ size_t hk_strlen(const char *str) {
 char *hk_strdup(const char *str) {
     size_t len = hk_strlen(str) + 1;
     char *new = malloc(len);
-
+    if (new == NULL) {
+        return NULL;
+    }
     memcpy(new, str, len);
     new[len-1] = '\0';
 
