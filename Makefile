@@ -46,11 +46,9 @@ clean:
 tests:
 	@echo "[*] compiling tests..."; \
 	rm test/*~ test/\#* 2>/dev/null || true; \
-	$(CC) -o tests $(TESTFILES) -lhk; \
+	$(CC) -o bin/tests $(TESTFILES) -lhk; \
 	echo "[*] running tests...\n"; \
-	( ./tests && echo "[OK] all tests passed!" ) || \
-	echo "[ERR] some tests failing...!"; \
-	rm tests;
+	valgrind -q --leak-check=full bin/tests;
 
 all: $(NAME) shared install tests clean
 
