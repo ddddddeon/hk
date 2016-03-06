@@ -39,8 +39,10 @@ hk_string_t hk_string(const char *str) {
     return s;
 }
 
-void hk_string_free(hk_string_t s) {
-    free(s.val);
+void hk_string_free(hk_string_t *s) {
+    free(s->val);
+    s->val = NULL;
+    s->len = 0;
 }
 
 void hk_print(const hk_string_t s) {
