@@ -92,8 +92,8 @@ int string_test() {
     hk_string_free(replaced4);
 
 
-    hk_string_t replaced6 = hk_string_replace(replaced5, "asdf", "fdsa");
-    hk_info("%s -> %s\n", replaced4.val, replaced5.val);   
+    hk_string_t replaced6 = hk_string_replace(replaced5, "yall", "fdsa");
+    hk_info("%s -> %s\n", replaced5.val, replaced6.val);   
     hk_string_free(replaced5);
     hk_string_free(replaced6);
 
