@@ -18,5 +18,4 @@ int hk_cmd(char* cmd) {
     }
 
     return pclose(p);
-   
 }
