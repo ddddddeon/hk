@@ -30,5 +30,6 @@ hk_string_t hk_uppercase(const hk_string_t s);
 hk_string_t hk_lowercase(const hk_string_t s);
 hk_string_t hk_reverse(const hk_string_t s);
 void hk_print(const hk_string_t s);
+void hk_string_free(hk_string_t s);
 
 #endif /* !HK_STRING_H */

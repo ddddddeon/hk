@@ -107,3 +107,7 @@ hk_string_t hk_reverse(const hk_string_t s) {
 void hk_print(const hk_string_t s) {
     printf("%s\n", s.val);
 }
+
+void hk_string_free(hk_string_t s) {
+    free(s.val);
+}

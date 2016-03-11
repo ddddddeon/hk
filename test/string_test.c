@@ -28,15 +28,15 @@ int string_test() {
     /* hk_uppercase */
     hk_string_t upper = hk_uppercase(s);
     hk_info("%s\n", upper.val);
-    free(upper.val);
-    free(s.val);
+    hk_string_free(upper);
+    hk_string_free(s);
 
     /* hk_uppercase (with non-alphabetical chars) */
     hk_string_t s2 = hk_string("hello !@#$%^&*()_+{}|:>?<,./;'[] world");
     hk_string_t upper2 = hk_uppercase(s2);
     hk_info("%s\n", upper2.val);
-    free(upper2.val);
-    free(s2.val);
+    hk_string_free(upper2);
+    hk_string_free(s2);
 
     /* hk_lowercase */
     hk_string_t mixed = hk_string("Hello WorlD!");
@@ -46,27 +46,27 @@ int string_test() {
 
     hk_string_t m_upper = hk_uppercase(mixed);
     hk_info("%s\n", m_upper.val);
-    free(m_upper.val);
-    free(m_lower.val);
-    free(mixed.val);
+    hk_string_free(m_upper);
+    hk_string_free(m_lower);
+    hk_string_free(mixed);
 
     /* hk_reverse */
     hk_string_t s3 = hk_string("hi there lol");
     hk_string_t reversed = hk_reverse(s3);
     hk_info("%s\n", reversed.val);
-    free(reversed.val);
-    free(s3.val);
+    hk_string_free(reversed);
+    hk_string_free(s3);
 
     /* hk_strcpy */
     hk_string_t s4 = hk_string("kalli rulz");
     hk_string_t s5 = hk_strcpy(s4);
     hk_info("%s\n", s5.val);
-    free(s4.val);
+    hk_string_free(s4);
 
     /* hk_strdup */
     char* s6 = hk_strdup(s5.val);
     hk_info("%s\n", s6);
-    free(s5.val);
+    hk_string_free(s5);
     free(s6);
 
     printf("\n");
