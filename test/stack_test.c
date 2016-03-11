@@ -49,7 +49,7 @@ int stack_test() {
 
     hk_info("remaining items in the stack:\n");
     while (cur) {
-	hk_info("%d\n", hk_stack_pop(&cur));
+        hk_info("%d\n", hk_stack_pop(&cur));
     }
 
     printf("\n");

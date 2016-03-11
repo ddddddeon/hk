@@ -1,3 +1,4 @@
+#include "core.h"
 #include "os.h"
 
 #include <stdio.h>
@@ -10,7 +11,7 @@ int hk_cmd(char* cmd) {
     
     if (p == NULL) {
         perror("pipe ");
-        exit(1);
+        return HK_NOK;
     }
 
     while (fgets(buf, sizeof(buf), p) != NULL) {
