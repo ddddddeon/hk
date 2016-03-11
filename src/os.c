@@ -14,7 +14,7 @@ int hk_cmd(char* cmd) {
     }
 
     while (fgets(buf, sizeof(buf), p) != NULL) {
-        printf("%s\n", buf);
+        printf("%s", buf);
     }
 
     return pclose(p);

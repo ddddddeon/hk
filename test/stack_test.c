@@ -4,7 +4,7 @@
 #include <hk/log.h>
 #include <hk/stack.h>
 
-int stack_test(int argc, char* argv[]) {
+int stack_test() {
     unsigned int result = HK_PASS;
 
     printf("[*] stack tests:\n");

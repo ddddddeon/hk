@@ -34,6 +34,12 @@ int main(int argc, char* argv[]) {
     } else {
         hk_info("string tests passing!\n\n");
     }
+
+    if (os_test() != HK_PASS) {
+        hk_err("os test failing...!\n");
+    } else {
+        hk_info("os test passing!\n\n");
+    }
     
     return result;
 }
