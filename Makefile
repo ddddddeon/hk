@@ -49,7 +49,11 @@ tests:
 	[ -d bin ] || mkdir bin; 			\
 	$(CC) -o bin/tests $(TESTFILES) -lhk; 		\
 	echo "[*] running tests...\n"; 			\
-	valgrind -q --leak-check=full bin/tests || true;
+	if which valgrind >/dev/null; then \
+		valgrind -q --leak-check=full bin/tests || true; \
+	else \
+		bin/tests || true; \
+	fi;
 
 all: $(NAME) shared install tests clean
 
