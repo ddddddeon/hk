@@ -12,4 +12,4 @@ int os_test();
 int bit_test();
 int log_test();
 
-#endif /* !HK_TEST_H */
+#endif                          /* !HK_TEST_H */

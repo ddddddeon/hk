@@ -13,13 +13,14 @@
     }                                          \
 } while(0)
 
-int string_test() {
+int string_test()
+{
     unsigned int result = HK_PASS;
 
     printf("[*] string tests:\n");
 
     /* hk_string */
-    char* str = "hello world";
+    char *str = "hello world";
     hk_string_t s = hk_string("hello world");
 
     hklog_prefix(HK_INFO);
@@ -73,7 +74,7 @@ int string_test() {
     hk_string_free(&s4);
 
     /* hk_strdup */
-    char* s6 = hk_strdup(s5.val);
+    char *s6 = hk_strdup(s5.val);
     hk_info("%s\n", s6);
     hk_str_eq(s6, "hello world");
     hk_string_free(&s5);
@@ -100,14 +101,14 @@ int string_test() {
     hk_info("%s -> %s\n", replaced3.val, replaced4.val);
     hk_str_eq(replaced4.val, "good morning world");
     hk_string_free(&replaced3);
-    
+
     hk_string_t replaced5 = hk_replace(replaced4, "world", "yall");
     hk_info("%s -> %s\n", replaced4.val, replaced5.val);
     hk_str_eq(replaced5.val, "good morning yall");
     hk_string_free(&replaced4);
 
     hk_string_t replaced6 = hk_replace(replaced5, "yall", "fdsa");
-    hk_info("%s -> %s\n", replaced5.val, replaced6.val);   
+    hk_info("%s -> %s\n", replaced5.val, replaced6.val);
     hk_str_eq(replaced6.val, "good morning fdsa");
     hk_string_free(&replaced5);
     hk_string_free(&replaced6);

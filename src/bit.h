@@ -29,7 +29,7 @@
 #define HK_BIT_24 8192U * 1024U
 #define HK_BIT_25 8192U * 2048U
 #define HK_BIT_26 8192U * 4096U
-#define HK_BIT_27 8192U * 8192U 
+#define HK_BIT_27 8192U * 8192U
 #define HK_BIT_28 (8192U * 8192U) * 2U
 #define HK_BIT_29 (8192U * 8192U) * 4U
 #define HK_BIT_30 (8192U * 8192U) * 8U
@@ -39,7 +39,7 @@
 #define HK_BIT_EMPTY 0U
 #define HK_BIT_FULL (HK_BIT_32 - 1U) | HK_BIT_32
 
-char* hk_int2bin(unsigned int set);
+char *hk_int2bin(unsigned int set);
 void hk_print_bits(int level, unsigned int set);
 void hk_set_bit(unsigned int *set, unsigned int bit_num);
 void hk_unset_bit(unsigned int *set, unsigned int bit_bum);
@@ -50,4 +50,4 @@ int hk_bit_is_set(unsigned int set, unsigned int bit_num);
 #define ASCII_ZERO '0'
 #define CTOI(i) ( i - ASCII_ZERO )
 
-#endif /* !HK_BIT_H */
+#endif                          /* !HK_BIT_H */

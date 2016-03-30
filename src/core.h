@@ -12,4 +12,4 @@
 
 #define NULL 0x0
 
-#endif /* !HK_CORE_H */
+#endif                          /* !HK_CORE_H */

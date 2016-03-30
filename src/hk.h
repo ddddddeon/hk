@@ -7,4 +7,4 @@
 #include "string.h"
 #include "os.h"
 
-#endif /* !HK_H */
+#endif                          /* !HK_H */

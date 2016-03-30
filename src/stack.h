@@ -14,10 +14,10 @@ struct hk_stack {
 typedef struct hk_stack hk_stack_t;
 
 hk_stack_t *hk_stack_create();
-void hk_stack_destroy(hk_stack_t **l);
-void hk_stack_push(hk_stack_t **l, int val);
-int hk_stack_pop(hk_stack_t **l);
-int hk_stack_peek(hk_stack_t *l);
-int hk_stack_isempty(hk_stack_t *l);
+void hk_stack_destroy(hk_stack_t ** l);
+void hk_stack_push(hk_stack_t ** l, int val);
+int hk_stack_pop(hk_stack_t ** l);
+int hk_stack_peek(hk_stack_t * l);
+int hk_stack_isempty(hk_stack_t * l);
 
-#endif /* !STACK_H */
+#endif                          /* !STACK_H */

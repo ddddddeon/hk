@@ -3,6 +3,6 @@
 
 #define BUFSIZE 1024
 
-int hk_cmd(char* cmd);
+int hk_cmd(char *cmd);
 
-#endif /* !OS_H */
+#endif                          /* !OS_H */

@@ -4,7 +4,8 @@
 #include <hk/log.h>
 #include <hk/stack.h>
 
-int stack_test() {
+int stack_test()
+{
     unsigned int result = HK_PASS;
 
     printf("[*] stack tests:\n");
@@ -14,11 +15,12 @@ int stack_test() {
 
     /* hk_stack_isempty */
     int is_empty = hk_stack_isempty(cur);
-    hk_info("is stack empty: %s\n", is_empty == HK_TRUE ? "true" : "false");
+    hk_info("is stack empty: %s\n",
+            is_empty == HK_TRUE ? "true" : "false");
     if (is_empty != HK_TRUE) {
         result = HK_FAIL;
     }
-    
+
     /* hk_stack_push */
     hk_stack_push(&cur, 420);
     hk_stack_push(&cur, 69);
@@ -40,9 +42,10 @@ int stack_test() {
         result = HK_FAIL;
     }
     printf("\n");
-    
+
     is_empty = hk_stack_isempty(cur);
-    hk_info("is stack empty: %s\n", is_empty == HK_TRUE ? "true" : "false");
+    hk_info("is stack empty: %s\n",
+            is_empty == HK_TRUE ? "true" : "false");
     if (is_empty == HK_TRUE) {
         result = HK_FAIL;
     }
@@ -57,7 +60,7 @@ int stack_test() {
     /* hk_stack_destroy */
     hk_stack_push(&cur, 23);
     hk_stack_destroy(&cur);
-    
+
     n = hk_stack_peek(cur);
     hk_info("%d\n", n);
     if (n != HK_STACK_EMPTY) {

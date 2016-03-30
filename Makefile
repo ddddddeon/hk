@@ -55,5 +55,11 @@ tests:
 		bin/tests || true; \
 	fi;
 
+fmt:
+	@if which indent >/dev/null; then \
+		indent -kr --no-tabs src/*.[ch] test/*.[ch]; \
+	fi; \
+	rm src/*~ src/\#* test/*~ test/\#* 2>/dev/null || true;
+
 all: $(NAME) shared install tests clean
 

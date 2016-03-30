@@ -2,19 +2,22 @@
 
 #include <malloc.h>
 
-hk_stack_t *hk_stack_create() {
+hk_stack_t *hk_stack_create()
+{
     hk_stack_t *head = NULL;
 
     return head;
 }
 
-void hk_stack_destroy(hk_stack_t **l) {
-    while(*l != NULL) {
+void hk_stack_destroy(hk_stack_t ** l)
+{
+    while (*l != NULL) {
         (void) hk_stack_pop(l);
     }
 }
 
-void hk_stack_push(hk_stack_t **l, int val) {
+void hk_stack_push(hk_stack_t ** l, int val)
+{
     hk_stack_t *cur;
     hk_stack_t *head;
 
@@ -27,7 +30,8 @@ void hk_stack_push(hk_stack_t **l, int val) {
     *l = cur;
 }
 
-int hk_stack_pop(hk_stack_t **l) {
+int hk_stack_pop(hk_stack_t ** l)
+{
     hk_stack_t *cur = *l;
     int var;
 
@@ -38,19 +42,20 @@ int hk_stack_pop(hk_stack_t **l) {
     return var;
 }
 
-int hk_stack_peek(hk_stack_t *l) {
+int hk_stack_peek(hk_stack_t * l)
+{
     if (l == NULL) {
-	return HK_STACK_EMPTY;
+        return HK_STACK_EMPTY;
     }
 
     return l->val;
 }
 
-int hk_stack_isempty(hk_stack_t *l) {
+int hk_stack_isempty(hk_stack_t * l)
+{
     if (l == NULL) {
         return HK_TRUE;
     }
 
     return HK_FALSE;
 }
-
