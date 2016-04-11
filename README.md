@@ -14,7 +14,6 @@ sudo make install
 make tests
 
 ```
-
 ## Includes
 
 ### Logging
