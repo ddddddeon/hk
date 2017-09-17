@@ -10,7 +10,8 @@ int bit_test(int argc, char *argv[])
 
     unsigned int num1 = 7U;
     unsigned int num2 = 1U;
-
+    unsigned int num3 = 301U;
+    
     printf("[*] bit tests:\n");
 
     hk_info("integer 7\n");
@@ -69,6 +70,48 @@ int bit_test(int argc, char *argv[])
         result = HK_FAIL;
     }
 
+    printf("\n");
+    hk_info("integer 301\n");
+    hk_print_bits(HK_DEBUG, num3);
+    hk_toggle_bit(&num3, 3);
+    hk_print_bits(HK_DEBUG, num3);
+    if (!hk_bit_is_set(num3, HK_BIT_3)) {
+      hk_info("3rd bit was toggled!");
+      hk_info("%d\n", num3);
+      hk_print_bits(HK_DEBUG, num3);
+    } else {
+      hk_err("3rd bit was not toggled...\n");
+      result = HK_FAIL;
+    }
+
+    printf("\n");
+    hk_info("integer 301\n");
+    hk_print_bits(HK_DEBUG, num3);
+    hk_toggle_bit(&num3, 1);
+    hk_print_bits(HK_DEBUG, num3);
+    if (!hk_bit_is_set(num3, HK_BIT_1)) {
+      hk_info("3rd bit was toggled!");
+      hk_info("%d\n", num3);
+      hk_print_bits(HK_DEBUG, num3);
+    } else {
+      hk_err("3rd bit was not toggled...\n");
+      result = HK_FAIL;
+    }
+
+    printf("\n");
+    hk_info("integer 301\n");
+    hk_print_bits(HK_DEBUG, num3);
+    hk_toggle_bit(&num3, 0);
+    hk_print_bits(HK_DEBUG, num3);
+    if (!hk_bit_is_set(num3, HK_BIT_1)) {
+      hk_info("no bit was toggled!");
+      hk_info("%d\n", num3);
+      hk_print_bits(HK_DEBUG, num3);
+    } else {
+      hk_err("-nth bit was somehow toggled, something's fucky...\n");
+      result = HK_FAIL;
+    }
+    
     printf("\n");
 
     return result;

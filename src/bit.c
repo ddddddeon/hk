@@ -44,3 +44,11 @@ void hk_unset_bit(unsigned int *set, unsigned int bit_num)
 {
     *set &= ~bit_num;
 }
+
+/*
+  The second argument is the nth bit rather than integer representing the bit as in the other functions
+ */
+void hk_toggle_bit(unsigned int *set, unsigned int nth_bit)
+{
+  *set ^= 1 << ( (nth_bit -1) < 0 ? 0 : (nth_bit - 1) );
+}
